@@ -1,10 +1,10 @@
 import { SideBar } from '@/Components'
+import Filtration from '@/Pages/Filtration/Filtration'
 
 const MainPage = () => {
 
   return <>
-  <SideBar/>
-
+    <div className='text-white flex-1'>sda</div>
   </>
 }
 
