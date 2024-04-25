@@ -80,11 +80,11 @@ const Filtration = () => {
         <h2 className='font-bold text-2xl text-white m-auto mb-[6px]'>Filters</h2>
         <div className='flex justify-between items-center text-white'>
           <span className='text-[#979797] text-sm'>Filters Applied</span>
-          <span onClick={clearAllFilteredItems} className='text-sm'>Clear All</span>
+          <span onClick={clearAllFilteredItems} className='text-sm cursor-pointer'>Clear All</span>
         </div>
 
         <div className='p-1 bg-[#202020] rounded-md mt-1 min-h-[45px] flex flex-wrap gap-0.5'>
-          {filteredItems.map((item) => <div className='bg-activeColor flex items-center px-1 rounded-md w-fit h-fit text-[10px] gap-0.5 mx-0.5'>{item} <span><X onClick={() => handleRemoveFilteredItems(item)} size={12} /> </span></div>)}
+          {filteredItems.map((item) => <div className='bg-activeColor flex items-center px-1 rounded-md w-fit h-fit text-[10px] gap-0.5 mx-0.5'>{item} <span><X onClick={() => handleRemoveFilteredItems(item)} className='cursor-pointer' size={12} /> </span></div>)}
         </div>
 
         <div className='bg-[#202020] rounded-md mt-3 mb-2 px-5 pt-[10px]'>

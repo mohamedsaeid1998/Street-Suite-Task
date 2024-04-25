@@ -9,5 +9,6 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  base: /Street-Suite-Task/
 });
 ``
