@@ -18,22 +18,21 @@ body{
   background-color: #202020;
 }
 
-// input[type="checkbox"]{
-//   opacity: 0;
-// }
-
-
-
 input[type="checkbox"].hidden:checked + label {
   background-color: #53ACFF;
   color: #202020;
-  padding: 1px;
+  padding-inline: 1px;
   border-radius: 4px;
   transition: all 0.5s;
 }
 
-
-
+input[type="checkbox"].hidden:hover + label {
+  background-color: #53ACFF;
+  color: #202020;
+  padding-inline: 1px;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
 input[type="radio"].strategy:checked + label {
   display: inline-flex;
   background-color: #53ACFF;
@@ -42,4 +41,27 @@ input[type="radio"].strategy:checked + label {
   padding: 1px 2px;
   border-radius: 4px;
   transition: all 0.5s;
+}
+
+.discount-icon{
+  transform: rotate(90deg)
+}
+
+.tableSection{
+  max-height: 86vh;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  &::-webkit-scrollbar-track-piece {
+    background-color: none;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #424242;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-corner{
+    display: none;
+  }
 }

@@ -1,10 +1,12 @@
-import { SideBar } from '@/Components'
+import { Header, SideBar, Table } from '@/Components'
 import Filtration from '@/Pages/Filtration/Filtration'
 
 const MainPage = () => {
 
   return <>
-    <div className='text-white flex-1'>sda</div>
+
+      <Header/>
+      <Table/>
   </>
 }
 

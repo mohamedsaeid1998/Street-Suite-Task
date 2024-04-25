@@ -91,8 +91,7 @@ const Filtration = () => {
           <h3 className='font-bold text-base text-white  mb-[6px]'>Stock</h3>
 
           <div className="flex items-center p-1.5 rounded-md  px-3 bg-[#313131] mb-[6px] ">
-            <span className='inline-flex text-[#6B6B6B] text-sm'>$ TICKER</span>
-            <input type="text" className="outline-none flex-1 border-none mr-2  bg-transparent pl-1 text-white" />
+            <input type="search" className="outline-none flex-1 border-none mr-2  bg-transparent pl-1 text-[#737373] placeholder-[#737373] caret-activeColor " placeholder='$ TICKER' />
             <FaSearch color="#6B6B6B" size={14} className="cursor-pointer   me-auto" />
           </div>
 

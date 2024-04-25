@@ -9,8 +9,10 @@ const AuthLayout = () => {
   return <>
     <div className='flex w-screen'>
       <SideBar {...{ toggle, setToggle }} />
+      <main className='p-4 flex-1 text-white'>
+        <Outlet />
+      </main>
 
-      <Outlet />
       <Filtration />
     </div>
 
