@@ -5,15 +5,10 @@ import Filtration from '../../Pages/Filtration/Filtration'
 
 const AuthLayout = () => {
 
-  const [toggle, setToggle] = useState(true)
-
   return <>
     <div className='flex w-screen'>
-      <SideBar {...{ toggle, setToggle }} />
-
+      <SideBar  />
       <Outlet />
-
-
     </div>
 
   </>
