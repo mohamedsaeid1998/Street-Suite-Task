@@ -1,8 +1,10 @@
-import { profileImg, streetSuiteLogo } from '@/Assets'
-import { FaArrowUpRightDots, FaBell, FaFolderOpen, FaGears, FaGraduationCap } from "react-icons/fa6";
+import { profileImg, streetSuiteLogo } from '@/Assets';
+import { sidebarIcons, sidebarShrink, textAvatar } from '@/Utils/Helpers/Variables';
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
-import NavigationLink from "./NavigationLink";
 import { useEffect, useState } from "react";
+import { FaArrowUpRightDots, FaBell, FaFolderOpen, FaGears, FaGraduationCap } from "react-icons/fa6";
+import NavigationLink from "./NavigationLink";
+
 const SideBar = () => {
 
   const navItems = [
@@ -11,30 +13,7 @@ const SideBar = () => {
     { icon: <FaArrowUpRightDots size={20} />, title: "Trading" },
   ]
 
-  const sidebarShrink = {
-    open: { width: "11rem", },
-    close: { width: "4rem", transition: { damping: 15 } },
-  };
-  const sidebarIcons = {
-    openIcon: {
-      y: ["2rem", "1rem"],
-      transition: { type: "spring", damping: 15, duration: 0.5 },
-    },
-    closeIcon: {
-      y: ["2rem", "4rem"],
-      transition: { type: "spring", damping: 15, duration: 0.5 },
-    },
-  };
-  const textAvatar = {
-    openIcon: {
-      opacity: [0.25, 0.5, 0.75, 1],
-      transition: { type: "spring", damping: 15, duration: 0.5 },
-    },
-    closeIcon: {
-      opacity: [0.1, 0],
-      transition: { type: "spring", damping: 15, duration: 0.5 },
-    },
-  };
+
 
   const [isOpen, setIsOpen] = useState(false);
   const containerControls = useAnimationControls();
@@ -52,13 +31,13 @@ const SideBar = () => {
       textAvatarSidebar.start("closeIcon");
     }
   }, [isOpen]);
-  const handelOpenClose = (status: any) => {
+  const handelOpenClose = (status: boolean) => {
     setIsOpen(status);
   };
 
   return <>
 
-    <motion.aside variants={sidebarShrink} initial="close" animate={containerControls} onMouseEnter={() => handelOpenClose(true)} onMouseLeave={() => handelOpenClose(false)} transition={{ type: "tween", stiffness: 500, damping: 300, ease: [0.17, 0.67, 0.83, 0.67]}} className={`bg-mainBg flex flex-col p-2 pt-4 h-screen duration-500`}>
+    <motion.aside variants={sidebarShrink} initial="close" animate={containerControls} onMouseEnter={() => handelOpenClose(true)} onMouseLeave={() => handelOpenClose(false)} transition={{ type: "tween", stiffness: 500, damping: 300, ease: [0.17, 0.67, 0.83, 0.67] }} className={`bg-mainBg flex flex-col p-2 pt-4 h-screen sideBar duration-500`}>
       <figure className=' flex justify-center mb-8'>
         <img className='min-w-10' src={streetSuiteLogo} alt="Logo" />
       </figure>
@@ -77,7 +56,7 @@ const SideBar = () => {
               {navItems?.map(({ icon, title }) => (
                 <li key={title}>
                   <div className="relative">
-                    <NavigationLink name={title} classes='text-stone-600'>{icon}</NavigationLink>
+                    <NavigationLink name={title} classes='text-[#5D5D5D]'>{icon}</NavigationLink>
                     <AnimatePresence>
                       <motion.div whileHover={{ opacity: isOpen ? 1 : 0, transition: { delay: 0.2, duration: 0.1, type: "spring" } }} className="wrapper absolute top-2 left-0 right-0  opacity-0 cursor-pointer">
                         <div className="background absolute bg-sky-900 text-center p-3 w-full h-full " style={{ filter: "blur(6px)" }}></div>
@@ -112,7 +91,7 @@ const SideBar = () => {
                 </motion.div>
               </AnimatePresence>
             </div>
-            <motion.span className={`text-[#424242] text-sm opacity-0 mt-4 mx-auto`} initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0, transition: { delay: 0.4 }, }}>
+            <motion.span className={`text-[#424242] text-sm opacity-0 mt-4 mx-auto`} initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0, transition: { delay: 0.1 }, }}>
               Street Suite. 2.0
             </motion.span>
           </motion.div>

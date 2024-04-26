@@ -1,19 +1,19 @@
-import { FaSearch } from "react-icons/fa";
-import { TbHeartPlus } from "react-icons/tb";
-import { BiRecycle } from "react-icons/bi";
-import { SlEnergy } from "react-icons/sl";
-import { ImCreditCard } from "react-icons/im";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { HiOutlineHome } from "react-icons/hi";
-import { GiMechanicalArm } from "react-icons/gi";
-import { PiChatsCircle } from "react-icons/pi";
-import { FaIndustry } from "react-icons/fa6";
-import { VscTools } from "react-icons/vsc";
-import { BsCoin } from "react-icons/bs";
 import { Button } from '@/Components';
-import { FaXmark as X } from "react-icons/fa6";
-import { useForm } from 'react-hook-form';
 import { IFilterResponse } from "@/InterFaces";
+import { marketCap, riskLevel } from "@/Utils/Helpers/Variables";
+import { useForm } from 'react-hook-form';
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BiRecycle } from "react-icons/bi";
+import { BsCoin } from "react-icons/bs";
+import { FaSearch } from "react-icons/fa";
+import { FaIndustry, FaXmark as X } from "react-icons/fa6";
+import { GiMechanicalArm } from "react-icons/gi";
+import { HiOutlineHome } from "react-icons/hi";
+import { ImCreditCard } from "react-icons/im";
+import { PiChatsCircle } from "react-icons/pi";
+import { SlEnergy } from "react-icons/sl";
+import { TbHeartPlus } from "react-icons/tb";
+import { VscTools } from "react-icons/vsc";
 interface IProps {
   filteredItems: string[]
   setFilteredItems: React.Dispatch<React.SetStateAction<string[]>>
@@ -48,20 +48,6 @@ const Filtration = ({ filteredItems, setFilteredItems, setFormData, clearAllFilt
     { icon: <BsCoin size={15} />, title: "Financials" },
   ]
 
-  const marketCap = [
-    { title: "Micro" },
-    { title: "Small", checked: true },
-    { title: "Large" },
-  ]
-
-  const riskLevel = [
-    { title: "Low Risk" },
-    { title: "Mid Risk", checked: true },
-    { title: "High Risk" },
-  ]
-
-
-
 
   const handleFilteredItems = (title: string) => {
     if (filteredItems.includes(title)) {
@@ -89,7 +75,7 @@ const Filtration = ({ filteredItems, setFilteredItems, setFormData, clearAllFilt
   }
 
   return <>
-    <section className='px-6 py-3 bg-mainBg  w-[420px] '>
+    <section className='px-6 py-3 bg-mainBg  w-[420px] filtration '>
       <div className='flex flex-col justify-center w-full '>
 
         <h2 className='font-bold text-2xl text-white m-auto mb-[6px]'>Filters</h2>

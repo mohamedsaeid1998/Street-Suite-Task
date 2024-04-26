@@ -1,12 +1,10 @@
 //@ts-nocheck
-import { MdDiscount } from "react-icons/md";
-import { FaFileLines } from "react-icons/fa6";
-import { IoIosTrendingUp } from "react-icons/io";
-import { FaMoneyBill } from "react-icons/fa6";
-import { FaMoneyBills } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { IFilterData } from "@/InterFaces";
+import { useEffect } from "react";
+import { FaFileLines, FaMoneyBill, FaMoneyBills } from "react-icons/fa6";
+import { IoIosTrendingUp } from "react-icons/io";
+import { MdDiscount } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 interface IProps {
   searchValue: string
@@ -33,7 +31,7 @@ const MarketDetails = ({ searchValue, formData, setFilterData, filterData, marke
 
     //! ***************Header Search Input ***************
     if (searchValue) {
-      
+
       const filteredResults = marketData?.filter(item =>
         item?.name?.toLowerCase()?.includes(searchValue?.toLowerCase())
       );
@@ -44,28 +42,24 @@ const MarketDetails = ({ searchValue, formData, setFilterData, filterData, marke
     if (formData?.filteredItems) {
 
       const filteredByRisk = marketData?.filter(({ risk }: any) => risk === formData?.risk);
-      console.log(filteredByRisk);
+
       setFilterData(filteredByRisk)
 
       const filteredByStrategy = filteredByRisk?.filter(({ strategy }: any) => strategy === formData?.strategy);
-      console.log(filteredByStrategy);
+
       setFilterData(filteredByStrategy)
 
       const filteredByAsset = filteredByStrategy?.filter(({ asset }: any) => asset === formData?.asset);
-      console.log(filteredByAsset);
+
       setFilterData(filteredByAsset)
 
       const filteredByIndustry = filteredByAsset?.filter(({ industry }: any) => formData?.filteredItems?.includes(industry));
-      console.log(filteredByIndustry);
+
       setFilterData(filteredByIndustry)
 
     }
 
   }, [marketData, searchValue, formData])
-
-
-
-  console.log(filterData);
 
   return <>
     <section className=" tableSection mt-5  overflow-y-scroll flex flex-col gap-4 ">
@@ -74,8 +68,8 @@ const MarketDetails = ({ searchValue, formData, setFilterData, filterData, marke
         <summary className=" bg-[#313131] hover:bg-activeColor group-open:bg-activeColor rounded-md py-3 flex pl-4 pr-2 justify-between ">
           <div className=" flex-1  "><div className=" flex gap-8 items-center  "><span><MdDiscount className="discount-icon" size={26} /></span>{name}</div></div>
           <div className="  flex-1  "><div className=" flex gap-8  items-center   "><span><FaFileLines size={26} /></span>{marketCap}</div></div>
-          <div className=" flex-1   "><div className={` flex gap-8 items-center  `}><span><IoIosTrendingUp size={26} /></span ><span className={`${Number(marketIndex) < 0 ? "text-red-600" : "text-greenColor"}`}>{marketIndex} %</span></div></div>
-          <div className="  flex-1 "><div className=" flex gap-8  items-center"><span> {risk === "Low Risk" ? <FaMoneyBill size={26} /> : <FaMoneyBills size={26} />}</span>{risk}</div></div>
+          <div className=" flex-1  hidden sm:block  "><div className={` flex gap-8 items-center  `}><span><IoIosTrendingUp size={26} /></span ><span className={`${Number(marketIndex) < 0 ? "text-red-600" : "text-greenColor"}`}>{marketIndex} %</span></div></div>
+          <div className="  flex-1 hidden md:block "><div className=" flex gap-8  items-center"><span> {risk === "Low Risk" ? <FaMoneyBill size={26} /> : <FaMoneyBills size={26} />}</span>{risk}</div></div>
         </summary>
         <article className="bg-mainBg p-8 rounded-md ">
           <p className="font-normal mb-3"><strong>$TSLA</strong> just announced an acquisition of <strong>$NFLX</strong> at <strong>$200 B</strong>.</p>
