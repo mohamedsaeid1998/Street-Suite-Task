@@ -84,7 +84,7 @@ const SideBar = () => {
                     <p className="mx-2 text-white text-base text-nowrap font-semibold ">
                       Moni Roy
                     </p>
-                    <p className="mx-2 text-[#979797] text-xs font-semibold">
+                    <p className="mx-2 text-grayColor text-xs font-semibold">
                       Beginner
                     </p>
                   </div>

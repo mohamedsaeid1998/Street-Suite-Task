@@ -80,7 +80,7 @@ const Filtration = ({ filteredItems, setFilteredItems, setFormData, clearAllFilt
 
         <h2 className='font-bold text-2xl text-white m-auto mb-[6px]'>Filters</h2>
         <div className='flex justify-between items-center text-white'>
-          <span className='text-[#979797] text-sm'>Filters Applied</span>
+          <span className='text-grayColor text-sm'>Filters Applied</span>
           <span onClick={clearAllFilteredItems} className='text-sm cursor-pointer'>Clear All</span>
         </div>
 
