@@ -13,11 +13,8 @@ export const MarketApiSlice = createApi({
     marketList: builder.query({
       query: () => ({
         url: MARKET_URLS.marketData,
-
       }),
-
     }),
-
   }),
 })
-export const {useMarketListQuery} = MarketApiSlice
+export const { useMarketListQuery } = MarketApiSlice

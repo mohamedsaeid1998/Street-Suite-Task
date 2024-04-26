@@ -6,14 +6,14 @@ import Filtration from '../../Pages/Filtration/Filtration'
 const AuthLayout = () => {
 
   const [toggle, setToggle] = useState(true)
+
   return <>
     <div className='flex w-screen'>
       <SideBar {...{ toggle, setToggle }} />
-      <main className='p-4 flex-1 text-white'>
-        <Outlet />
-      </main>
 
-      <Filtration />
+      <Outlet />
+
+
     </div>
 
   </>

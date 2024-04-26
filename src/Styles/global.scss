@@ -38,7 +38,7 @@ input[type="radio"].strategy:checked + label {
   background-color: #53ACFF;
   width: 100%;
   color: white;
-  padding: 1px 2px;
+  padding-inline: 2px ;
   border-radius: 4px;
   transition: all 0.5s;
 }
@@ -48,7 +48,7 @@ input[type="radio"].strategy:checked + label {
 }
 
 .tableSection{
-  max-height: 86vh;
+  max-height: 85vh;
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
